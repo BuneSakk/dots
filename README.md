@@ -25,6 +25,11 @@ Welcome to **bunes** - This repo includes my dots, which I am currently managing
 >  ### Serives 
    - [bluez-utils](https://archlinux.org/packages/?name=bluez-utils) 
 
+>  ### Screenshot Utils
+   - Slurp
+   - Satty
+   - Grim
+
 >  ### Cursor Theme
     - Babata 
    ### Fonts
@@ -41,4 +46,3 @@ Welcome to **bunes** - This repo includes my dots, which I am currently managing
    - [yagnikpt](https://github.com/yagnikpt/dotfiles/blob/main/Configs/fastfetch/.config/fastfetch/config.jsonc)
    ## Starship
    - Typecraft - Thanks to his beautiful starship config, I didn't even change a signle bit of code, 😸.
-   - [anki-code](https://github.com/anki-code/starship-prompt-mono) - For his mono starship theme.

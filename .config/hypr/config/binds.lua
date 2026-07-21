@@ -9,7 +9,7 @@ local launchPrefix = "" -- if you are not using UWSM, make this empty (e.g. "")
 -- Window manipulation
 hl.bind(mainMod .. " + Escape",      hl.dsp.exec_cmd("hyprctl dispatch 'hl.dsp.exit()'"))
 hl.bind(mainMod .. " + Q",           hl.dsp.window.close())
-hl.bind(mainMod .. " + P", hl.dsp.window.float({ action = "toggle" }))
+hl.bind(mainMod .. " + N", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + D",           hl.dsp.window.fullscreen({ mode = 1 }))
 hl.bind(mainMod .. " + F",           hl.dsp.window.fullscreen())
 hl.bind(mainMod .. " + J",           hl.dsp.layout("togglesplit"))
@@ -20,7 +20,7 @@ hl.bind(mainMod .. " + Right", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + Up",    hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + Down",  hl.dsp.focus({ direction = "down" }))
 hl.bind("ALT + Tab",           hl.dsp.window.cycle_next())
---hl.bind(mainMod .. " + Tab",   hl.dsp.exec_cmd(noctCall .. "window-switcher"))
+hl.bind(mainMod .. " + Tab",   hl.dsp.exec_cmd(ipc .. "window-switcher"))
 
 -- Move active window around workspaces & monitors
 hl.bind(mainMod .. " + SHIFT + Right",           hl.dsp.window.move({ direction = "r" }))
@@ -36,7 +36,7 @@ hl.bind(mainMod .. " + CTRL + SHIFT + Right", hl.dsp.window.move({ workspace = "
 hl.bind(mainMod .. " + CTRL + SHIFT + Left",  hl.dsp.window.move({ workspace = "r-1" }))
 for i = 1, NUM_WPM do
     local key = i % 10
-    hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = "m~" .. i }))
+    hl.bind(mainMod .. "+ SHIFT + " .. key, hl.dsp.window.move({ workspace = "m~" .. i }))
 end
 
 -- Move & Resize with mouse
@@ -79,8 +79,8 @@ hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd(ipc .. "brightness-down"))
 -------------------
 
 -- Screen Capture
-hl.bind(mainMod .. " + P",     hl.dsp.exec_cmd("hyprpicker -a"))
-
+--hl.bind("Print", hl.dsp.exec_cmd('grim - | satty -f - --copy-command wl-copy -o "~/Pictures/Screenshots/%Y%m%d_%H%M%S.png"'))
+hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd('grim -g "$(slurp)" - | satty -f - --copy-command wl-copy -o "~/Pictures/Screenshots/%Y%m%d_%H%M%S.png"'))
 -------------------------------
 ---- WORKSPACES & MONITORS ----
 -------------------------------
@@ -114,9 +114,8 @@ hl.bind(mainMod .. " + CONTROL + mouse_up",   hl.dsp.focus({ workspace = "m+1" }
 hl.bind(mainMod .. " + CONTROL + mouse_down", hl.dsp.focus({ workspace = "m-1" }))
 
 -- Special workspace (scratchpad)
-hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special" }))
+hl.bind(mainMod .. " + ALT + SHIFT + S", hl.dsp.window.move({ workspace = "special" }))
 hl.bind(mainMod .. " + S",         hl.dsp.workspace.toggle_special())
-
 
 
 --------------------------------------
@@ -130,3 +129,5 @@ hl.bind("switch:off:Lid Switch", hl.dsp.exec_cmd("noctalia msg session lock && n
 ---------------------------------------
 
 hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd("noctalia msg panel-toggle wallpaper"))
+
+
