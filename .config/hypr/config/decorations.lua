@@ -1,0 +1,66 @@
+-- Look and feel configuration
+
+hl.config({
+    general = {
+        gaps_in = 3,
+        gaps_out = 8,
+        border_size = 0,
+        extend_border_grab_area = 10,
+        resize_on_border = true,
+        col = {
+            active_border = {
+                colors = { CACHYLGREEN, CACHYDGREEN },
+                angle = 45,
+            },
+            inactive_border = CACHYGRAY,
+        },
+    },
+    group = {
+        col = {
+            border_active = CACHYLBLUE,
+            border_inactive = CACHYGRAY,
+            border_locked_active = CACHYDBLUE,
+            border_locked_inactive = CACHYGRAY,
+        },
+        groupbar = {
+            col = {
+                active = CACHYLGREEN,
+                inactive = CACHYGRAY,
+                locked_active = CACHYDBLUE,
+                locked_inactive = CACHYGRAY,
+            },
+        },
+    },
+    decoration = {
+        rounding           = 15,
+        rounding_power     = 3,
+        active_opacity     = 0.8,
+        inactive_opacity   = 0.8,
+        fullscreen_opacity = 1.0,
+ 
+
+     blur = {
+            enabled           = true,
+            size              = 10,
+            passes            = 4,
+            vibrancy          = 0.1696,
+            new_optimizations = true,
+            popups            = true,
+            xray              = true,
+        },
+     
+      },
+})
+
+
+
+hl.layer_rule({
+  name = "noctalia",
+  match = {
+    namespace = "^noctalia-(bar-.+|notification|dock|panel|attached-panel|osd|window-switcher)$",
+  },
+  no_anim = true,
+  ignore_alpha = 0.5,
+  blur = true,
+  blur_popups = true,
+})
