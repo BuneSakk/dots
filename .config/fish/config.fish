@@ -2,7 +2,6 @@ if status is-interactive
 
     #    abbr -a update sudo pacman -Syu
     abbr -a edit sudo -E micro
-    abbr -a edit sudo -E helix
 end
 starship init fish | source
 pokemon-colorscripts -r
@@ -18,5 +17,4 @@ alias push='git push -u origin'
 alias yr='yay -Rs'
 set fzf_fd_opts --hidden --max-depth 5
 export EDITOR=micro
-export EDITOR=helix
 source /usr/share/cachyos-fish-config/cachyos-config.fish
