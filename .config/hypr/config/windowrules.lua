@@ -126,3 +126,8 @@ hl.window_rule({
     float = true,
     size = { 1080, 920 },
 })
+
+hl.window_rule({
+  match   = { class = "chromium" },
+  opacity = "1.0 override 0.9 override 1 override",
+})
