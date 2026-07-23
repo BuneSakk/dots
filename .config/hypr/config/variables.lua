@@ -3,7 +3,7 @@
 TERMINAL     = "kitty"
 FILE_MANAGER = "nautilus"
 BROWSER      = "chromium"
-EDITOR       = "kitty -e micro"
+EDITOR       = "code"
 CALCULATOR   = "vicinae toggle"
 
 -- Monitors
